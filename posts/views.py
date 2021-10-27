@@ -109,7 +109,7 @@ class PostView(ViewSet):
         serializer = self.serializer_class(post)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @action(detail=True, methods=["GET"])
+    @action(detail=True, methods=["GET", "DELETE"])
     def delete(self, request, pk: str):
         """
         Delete a post by its id
